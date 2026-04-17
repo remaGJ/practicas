@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ticket de salida — Semana 2, Sesión 1. Ejercicio de cierre grupal.">
+  <title>Ticket de Salida — Semana 2</title>
+</head>
+<body>
+
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  TICKET DE SALIDA — Semana 2, Sesión 1                     ║
+  ║  IS-403 — Aplicaciones para el Cliente Web                 ║
+  ║                                                            ║
+  ║  INSTRUCCIONES:                                            ║
+  ║  1. Trabajen en su equipo de 3 (mismos del proyecto).      ║
+  ║  2. Tienen 20 minutos.                                     ║
+  ║  3. Completen los 3 retos de abajo directamente en este    ║
+  ║     archivo, reemplazando los comentarios "TODO".          ║
+  ║  4. Cuando terminen, llamen al docente para que valide     ║
+  ║     su resultado EN PANTALLA antes de que se vayan.        ║
+  ║  5. NO copien del portafolio-final.html — la idea es que   ║
+  ║     lo hagan de memoria con lo aprendido hoy.              ║
+  ╚══════════════════════════════════════════════════════════════╝
+  -->
+
+
+
+
+  <header>
+    <h1>Ficha de inscripción — Hackathon ULEAM 2026</h1>
+    <p>Evento ficticio para practicar formularios, tablas y accesibilidad.</p>
+  </header>
+
+  <main>
+
+    <!-- ============================================
+         RETO 1: FORMULARIO DE INSCRIPCIÓN (10 min)
+         ============================================
+         Construyan un formulario de inscripción al hackathon
+         con TODOS los requisitos listados abajo.
+
+         Requisitos:
+         - Mínimo 4 campos: nombre del equipo, correo del líder,
+           número de integrantes (1-5), categoría (select con al
+           menos 3 opciones: Web, Móvil, IA).
+         - CADA campo con su <label for="..."> asociado.
+         - Validaciones: correo obligatorio, nombre de equipo
+           mínimo 3 caracteres, integrantes entre 1 y 5.
+         - Al menos UN <fieldset> con <legend>.
+         - Botón de inscripción.
+         ============================================ -->
+
+    
+    <fieldset>
+    <form id="formulario-inscripcion" aria-label="Formulario de inscripción al Hackathon ULEAM 2026">
+        <label for="nombre-equipo">Nombre del equipo:</label>
+        <input type="text" id="nombre-equipo" name="nombre-equipo" required minlength="3">
+
+        <label for="correo-lider">Correo del líder:</label>
+        <input type="email" id="correo-lider" name="correo-lider" required>
+
+        <label for="integrantes">Número de integrantes:</label>
+        <input type="number" id="integrantes" name="integrantes" min="1" max="5" required>
+
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="">Seleccione una categoría</option>
+            <option value="web">Web</option>
+            <option value="movil">Móvil</option>
+            <option value="ia">IA</option>
+        </select>
+
+            <legend>Información adicional</legend>
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios"></textarea>
+    
+    </form>
+
+    <button type="submit">Inscribir equipo</button>
+
+    </fieldset>
+    
+        
+    
+
+    <section id="inscripcion">
+      <h2>Inscripción</h2>
+
+      <!-- TODO: Construyan el formulario aquí -->
+
+    </section>
+
+    <!-- ============================================
+         RETO 2: TABLA DE PREMIOS (7 min)
+         ============================================
+         Construyan una tabla semántica que muestre los premios
+         del hackathon.
+
+         Requisitos:
+         - <caption> descriptivo.
+         - <thead>, <tbody>, <tfoot>.
+         - Al menos 3 filas en tbody.
+         - Columnas: Puesto, Categoría, Premio.
+         - AL MENOS un uso de rowspan O colspan.
+         - scope="col" en los encabezados de columna.
+         - <tfoot> con una celda que use colspan para una nota.
+         ============================================ -->
+
+    <section id="premios">
+      <h2>Premios</h2>
+
+      <!-- TODO: Construyan la tabla aquí -->
+      <!-- tr se usa para filas, td para celdas normales y th para encabezados de columna o fila.-->
+
+       <caption>Premios del Hackathon ULEAM 2026</caption>
+       <table>
+
+        <thead>
+            <tr>
+                <th scope="col">Puesto</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Premio</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">1°</td>
+                <td>Web</td>
+                <td>Portátil de última generación</td>
+            </tr>
+            <tr>
+                <td>Móvil</td>
+                <td>Tablet de alta gama</td>
+            </tr>
+            <tr>
+                <td>2°</td>
+                <td>IA</td>
+                <td>Smartphone avanzado</td>
+            </tr>
+
+            <tr>
+                <td>3°</td>
+                <td colspan="2">Accesorios tecnológicos (auriculares, smartwatch, etc.)</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3"> Todos los premios son ficticios y solo para fines de práctica.</td>
+            </tr>
+
+         </table>
+
+    </section>
+
+    <!-- ============================================
+         RETO 3: ACCESIBILIDAD (3 min)
+         ============================================
+         Apliquen accesibilidad a TODO el documento:
+
+         1. Agreguen una imagen del evento con alt descriptivo
+            (pueden usar https://placehold.co/400x200?text=Hackathon).
+         2. Agreguen aria-label al <header> o al formulario.
+         3. Verifiquen que CADA input tenga su <label for="...">
+            correctamente conectado (si no, corríjanlo).
+         ============================================ -->
+
+    <section id="imagen-evento">
+      <h2>Sobre el evento</h2>
+
+      <!-- TODO: Imagen accesible + aria-label donde corresponda -->
+
+        <img src="https://placehold.co/400x200?text=Hackathon" alt="Imagen representativa del Hackathon ULEAM 2026, mostrando a un grupo de personas colaborando frente a computadoras en un ambiente de trabajo creativo.">
+        
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Hackathon ULEAM (evento ficticio — ejercicio de clase)</p>
+  </footer>
+
+</body>
+</html>
+
+
+
