@@ -151,6 +151,53 @@
          <h2>Equipo</h2>
          <p> jose, rosanna, jandry,</p>
       </section>
+      <section id="contacto">
+         <form action="#" method="post" aria-label="Formulario de contacto">
+            <fieldset>
+               <legend>Información personal</legend>
+               <p>
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="60"
+                     placeholder="EJ: Juan Perez">
+               </p>
+               <p>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required minlength="5" maxlength="100"
+                     placeholder="EJ: example@email.com">
+               </p>
+               <p>
+                  <label for="telefono">Telefono:</label>
+                  <input type="tel" id="telefono" name="telefono" required minlength="9" maxlength="9"
+                     placeholder="EJ: 099986542">
+               </p>
+            </fieldset>
+            <fieldset>
+               <legend>Mensaje</legend>
+               <p>
+                  <label for="asunto"> Asunto: </label>
+                  <select id="asunto" name="asunto" required>
+                     <option value="">Seleccione una opción</option>
+                     <option value="">Sugerencia</option>
+                     <option value="">Queja</option>
+                     <option value="">Oferta de trabajo</option>
+                     <option value="">Otro</option>
+                  </select>
+               </p>
+            </fieldset>
+            <fieldset>
+               <legend>Mensaje</legend>
+               <label for="mensaje">Mensaje:</label>
+               <textarea id="mensaje" name="mensaje" rows="5" cols="40" requiered minlength="30"
+                  placeholder="como podemos ayudarte?"></textarea>
+            </fieldset>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+            <p>
+               <imput type="checkbox" id="acepto" name="acepto" required>
+                  <label for="acepto">Acepto los terminos y condiciones</label>
+            </p>
+         </form>
+      </section>
 
    </main>
 
