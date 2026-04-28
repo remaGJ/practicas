@@ -268,7 +268,7 @@ textarea {
 }
 
 input:focus,
-select.focus,
+select:focus,
 textarea:focus {
     outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
@@ -288,7 +288,7 @@ button {
 }
 
 button[type="submit"] {
-    background-color: var(--color-secondary);
+    background-color: #00432c;
     color: rgb(200, 255, 137);
 }
 
@@ -300,7 +300,13 @@ button[type="submit"]:hover {
 button[type="reset"] {
     background-color: transparent;
     color: var(--color-text-light);
-    border: 1px solid #ff7171;
+    border: 1px solid #ffffff;
+    background-color: #ff1f1f;
+}
+
+button[type="reset"]:hover {
+    background-color: #ff7070;
+    /* Versión más oscura */
 }
 
 footer {
