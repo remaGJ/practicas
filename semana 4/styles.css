@@ -86,115 +86,149 @@ nav {
 
 
 .hero {
-display: flex;
-flex-direction: column; /* Apila hijos verticalmente */
-justify-content: center; /* Centra en eje principal (vertical) */
-align-items: center; /* Centra en eje transversal (horizontal) */
-text-align: center;
-min-height: 60vh; /* Al menos 60% de la altura de la ventana */
-padding: var(--spacing-xl) var(--spacing-lg);
-background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    /* Apila hijos verticalmente */
+    justify-content: center;
+    /* Centra en eje principal (vertical) */
+    align-items: center;
+    /* Centra en eje transversal (horizontal) */
+    text-align: center;
+    min-height: 60vh;
+    /* Al menos 60% de la altura de la ventana */
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background-color: var(--color-bg);
 }
 
 .hero h1 {
-font-size: 2.8rem;
-color: var(--color-primary);
-margin-bottom: var(--spacing-sm);
-margin-top: 0;
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
 }
 
 .hero-subtitle {
-font-size: 1.2rem;
-color: var(--color-secondary);
-font-weight: 500;
-margin: 0 0 var(--spacing-sm) 0;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+    margin: 0 0 var(--spacing-sm) 0;
 }
+
 .hero p:last-child {
-font-size: 1.1rem;
-color: var(--color-text-light);
-max-width: 600px; /* Limita ancho para legibilidad */
-margin: 0;
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    /* Limita ancho para legibilidad */
+    margin: 0;
 }
+
 .problema {
-padding: var(--spacing-xl) var(--spacing-lg);
-max-width: 960px; /* Limita ancho del contenido */
-margin: 0 auto; /* Centra horizontalmente */
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: 960px;
+    /* Limita ancho del contenido */
+    margin: 0 auto;
+    /* Centra horizontalmente */
 }
+
 .solucion {
-background-color: var(--color-bg);
-max-width: 100%; /* Fondo ocupa todo el ancho */
+    background-color: var(--color-bg);
+    max-width: 100%;
+    /* Fondo ocupa todo el ancho */
 }
 
 .metricas {
-font-size: 1.8rem;
-color: var(--color-primary);
-margin-bottom: var(--spacing-lg);
-padding-bottom: var(--spacing-sm);
-border-bottom: 3px solid var(--color-secondary);
-display: inline-block; /* El borde solo ocupa el ancho del texto */
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 3px solid var(--color-secondary);
+    display: inline-block;
+    /* El borde solo ocupa el ancho del texto */
 }
+
 .project-grid {
-display: flex;
-gap: var(--spacing-lg); /* Espacio entre tarjetas */
-flex-wrap: wrap; /* CLAVE: permite que salten de línea */
+    display: flex;
+    gap: var(--spacing-lg);
+    /* Espacio entre tarjetas */
+    flex-wrap: wrap;
+    /* CLAVE: permite que salten de línea */
 }
+
 .project-card {
-flex: 1 1 280px; /* grow=1, shrink=1, basis=280px */
-background: white;
-border: 1px solid #e0e0e0;
-border-top: 4px solid var(--color-secondary); /* Acento superior */
-border-radius: var(--radius);
-overflow: hidden; /* Las imágenes respetan border-radius */
-transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1 1 280px;
+    /* grow=1, shrink=1, basis=280px */
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid var(--color-secondary);
+    /* Acento superior */
+    border-radius: var(--radius);
+    overflow: hidden;
+    /* Las imágenes respetan border-radius */
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .project-card:hover {
-transform: translateY(-4px); /* Se levanta 4 pixeles */
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Sombra suave */
+    transform: translateY(-4px);
+    /* Se levanta 4 pixeles */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    /* Sombra suave */
 }
+
 .project-card img {
-width: 100%;
-height: 200px;
-object-fit: cover; /* Recorta sin distorsionar */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Recorta sin distorsionar */
 }
+
 .project-card h3 {
-padding: var(--spacing-md) var(--spacing-md) 0;
-margin: 0;
-color: var(--color-primary);
-font-size: 1.15rem;
+    padding: var(--spacing-md) var(--spacing-md) 0;
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 1.15rem;
 }
+
 .project-card p {
-padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
-margin: 0;
-color: var(--color-text-light);
-font-size: 0.92rem;
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 0.92rem;
 }
+
 table {
-width: 100%;
-border-collapse: collapse; /* Elimina espacio entre celdas */
-background-color: white;
-border-radius: var(--radius);
-overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    /* Elimina espacio entre celdas */
+    background-color: white;
+    border-radius: var(--radius);
+    overflow: hidden;
 }
+
 thead {
-background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
+
 thead th {
-color: white;
-padding: 12px var(--spacing-md);
-text-align: left;
-font-weight: 600;
+    color: white;
+    padding: 12px var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
 }
+
 tbody th {
-background-color: #eef2f7;
-padding: 10px var(--spacing-md);
-text-align: left;
-font-weight: 600;
-color: var(--color-primary);
+    background-color: #eef2f7;
+    padding: 10px var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-primary);
 }
+
 tbody td {
-padding: 10px var(--spacing-md);
-border-bottom: 1px solid #e0e0e0;
+    padding: 10px var(--spacing-md);
+    border-bottom: 1px solid #e0e0e0;
 }
+
 tbody tr:hover td {
-background-color: #f8f9fa; /* Resaltado al pasar el mouse */
+    background-color: #85e0ec;
+    /* Resaltado al pasar el mouse */
 }
