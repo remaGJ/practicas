@@ -232,3 +232,86 @@ tbody tr:hover td {
     background-color: #85e0ec;
     /* Resaltado al pasar el mouse */
 }
+
+fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    background-color: whitesmoke;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: var(--spacing-sm);
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 0.5rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #fcf5a9;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    margin-bottom: var(--spacing-md);
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select.focus,
+textarea:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-color: transparent;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: 540;
+    color: white;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"] {
+    background-color: var(--color-secondary);
+    color: rgb(200, 255, 137);
+}
+
+button[type="submit"]:hover {
+    background-color: #85fe7a;
+    /* Versión más oscura */
+}
+
+button[type="reset"] {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 1px solid #ff7171;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 4px 0;
+    opacity: 0.8;
+}
