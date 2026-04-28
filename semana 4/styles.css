@@ -1,48 +1,85 @@
-/* ============ RESET UNIVERSAL ============ */
-*, *::before, *::after {
-box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 :root {
-/* Colores — elegir los suyos */
---color-primary: #1e2761; /* Color principal (oscuro) */
---color-secondary: #028090; /* Color secundario (acento) */
---color-accent: #f96167; /* Color de destaque */
---color-bg: #f4f7fa; /* Fondo alternativo */
---color-text: #333333; /* Texto principal */
---color-text-light: #777777; /* Texto secundario */
-/* Tipografía */
---font-body: "Segoe UI", Arial, sans-serif;
-/* Espaciado */
---spacing-sm: 8px;
---spacing-md: 16px;
---spacing-lg: 32px;
---spacing-xl: 64px;
-/* Bordes */
---radius: 8px;
+    --color-primary: #00432c;
+    --color-secondary: #1f0022;
+    --color-accent: #f96167;
+    --color-bg: #c4e1ff;
+    --color-text: #342417;
+    --color-text-light: #f9cbcb;
+    --font-body: "Segoe UI", Arial, sans-serif;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+    --radius: 8px;
 }
+
 body {
-margin: 0; /* Elimina margen por defecto del navegador */
-padding: 0;
-font-family: var(--font-body);
-font-size: 1rem;
-line-height: 1.6;
-color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
 }
-h1, h2, h3 {
-color: var(--color-primary);
-margin-top: 0;
+
+h1,
+h2,
+h3 {
+    color: var(--color-primary);
+    margin-top: 0;
 }
+
 a {
-color: var(--color-secondary);
-text-decoration: none;
-transition: color 0.2s; /* Transición suave al cambiar color */
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
 }
+
 a:hover {
-color: var(--color-accent);
+    color: var(--color-accent);
 }
+
 img {
-max-width: 100%; /* Imágenes nunca desbordan su contenedor */
-height: auto;
-display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-primary);
+}
+
+.nav-logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-logo:hover {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
 }
