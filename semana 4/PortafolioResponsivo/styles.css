@@ -421,3 +421,40 @@ footer p {
     font-size: 0.9rem;
     color: var(--color-secondary);
 }
+
+
+.grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.card-equipo {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+
+.card-equipo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Esto las hace circulares */
+    object-fit: cover;
+    border: 3px solid #27ae60;
+    margin-bottom: 15px;
+}
+
+.card-equipo h3 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.card-equipo p {
+    color: #666;
+    font-size: 0.9rem;
+}
