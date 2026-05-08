@@ -1,0 +1,460 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #00432c;
+    --color-secondary: #1f0022;
+    --color-accent: #f961f4;
+    --color-bg: #c4e1ff;
+    --color-text: #342417;
+    --color-text-light: #f9cbcb;
+    --font-body: "Segoe UI", Arial, sans-serif;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+    --radius: 8px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-texto);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+}
+
+.hero__title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+@media (min-width:768px) {
+    .grid-galeria {
+        gap: 1px;
+        padding: 2rem
+    }
+}
+
+@media (min-width:1200px) {
+    .grid-galeria {
+        gap: 2rem;
+        padding: 3rem 4rem;
+    }
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #eee
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.card i {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.redes a {
+    font-size: 1.5rem;
+    color: var(--color-texto);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.redes a:hover {
+    color: #9f9f9f;
+    transform: translateY(-2px);
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-primary);
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff
+}
+
+.nav-logo:hover {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #9f9f9f
+}
+
+@media (min-width: 768px) {
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 2rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p:last-child {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 3rem 2rem;
+    }
+
+    .hero__title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (width:1200px) {
+    .hero__title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+.problema {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: 960px;
+    /* Limita ancho del contenido */
+    margin: 0 auto;
+    /* Centra horizontalmente */
+}
+
+.solucion {
+    background-color: var(--color-bg);
+    max-width: 100%;
+    /* Fondo ocupa todo el ancho */
+}
+
+.metricas {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 3px solid var(--color-secondary);
+    display: inline-block;
+    /* El borde solo ocupa el ancho del texto */
+}
+
+.project-grid {
+    display: flex;
+    gap: var(--spacing-lg);
+    /* Espacio entre tarjetas */
+    flex-wrap: wrap;
+    /* CLAVE: permite que salten de línea */
+}
+
+.project-card {
+    flex: 1 1 280px;
+    /* grow=1, shrink=1, basis=280px */
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid var(--color-secondary);
+    /* Acento superior */
+    border-radius: var(--radius);
+    overflow: hidden;
+    /* Las imágenes respetan border-radius */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    /* Se levanta 4 pixeles */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    /* Sombra suave */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Recorta sin distorsionar */
+}
+
+.project-card h3 {
+    padding: var(--spacing-md) var(--spacing-md) 0;
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 1.15rem;
+}
+
+.project-card p {
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 0.92rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Elimina espacio entre celdas */
+    background-color: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+thead {
+    background-color: var(--color-primary);
+}
+
+thead th {
+    color: white;
+    padding: 12px var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+}
+
+tbody th {
+    background-color: #eef2f7;
+    padding: 10px var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+tbody td {
+    padding: 10px var(--spacing-md);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover td {
+    background-color: #85e0ec;
+    /* Resaltado al pasar el mouse */
+}
+
+fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    background-color: whitesmoke;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: var(--spacing-sm);
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 0.5rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #fcf5a9;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    margin-bottom: var(--spacing-md);
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-color: transparent;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: 540;
+    color: white;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"] {
+    background-color: #00432c;
+    color: rgb(200, 255, 137);
+}
+
+button[type="submit"]:hover {
+    background-color: #85fe7a;
+    /* Versión más oscura */
+}
+
+button[type="reset"] {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 1px solid #ffffff;
+    background-color: #ff1f1f;
+}
+
+button[type="reset"]:hover {
+    background-color: #ff7070;
+    /* Versión más oscura */
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 4px 0;
+    opacity: 0.8;
+}
+
+.acepto {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+}
+
+
+.grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.card-equipo {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+
+.card-equipo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Esto las hace circulares */
+    object-fit: cover;
+    border: 3px solid #27ae60;
+    margin-bottom: 15px;
+}
+
+.card-equipo h3 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.card-equipo p {
+    color: #666;
+    font-size: 0.9rem;
+}
