@@ -7,7 +7,7 @@
 :root {
     --color-primary: #00432c;
     --color-secondary: #1f0022;
-    --color-accent: #f96167;
+    --color-accent: #f961f4;
     --color-bg: #c4e1ff;
     --color-text: #342417;
     --color-text-light: #f9cbcb;
@@ -26,34 +26,41 @@ body {
     color: var(--color-texto);
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     font-family: 'Poppins', sans-serif;
     line-height: 1.2;
 }
 
 .hero__title {
-    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
-.redes a{
-    font-size: 1.5rem;
-    color: var(--color-texto);
-    transition: color 0.2s, transform 0.2s;
-}
-
-.redes a:hover{
-    color: var(--color-accent);
-    transform: translateY(-2px);
-}
-
-.grid-galeria{
+.grid-galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap:1rem;
+    gap: 1rem;
     padding: 1rem;
 }
 
-.card{
+@media (min-width:768px) {
+    .grid-galeria {
+        gap: 1px;
+        padding: 2rem
+    }
+}
+
+@media (min-width:1200px) {
+    .grid-galeria {
+        gap: 2rem;
+        padding: 3rem 4rem;
+    }
+}
+
+.card {
     background: #f9f9f9;
     padding: 2rem;
     border-radius: 12px;
@@ -61,18 +68,28 @@ h1,h2,h3 {
     border: 1px solid #eee
 }
 
-.card:hover{
+.card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
 }
 
-.card i{
+.card i {
     font-size: 3rem;
     color: var(--color-primary);
     margin-bottom: 1rem;
 }
 
+.redes a {
+    font-size: 1.5rem;
+    color: var(--color-texto);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.redes a:hover {
+    color: #9f9f9f;
+    transform: translateY(-2px);
+}
 
 a {
     color: var(--color-secondary);
@@ -92,16 +109,17 @@ img {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: var(--spacing-md) var(--spacing-lg);
+    gap: 1rem;
+    padding: 1rem;
     background-color: var(--color-primary);
 }
 
 .nav-logo {
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff
 }
 
 .nav-logo:hover {
@@ -110,33 +128,47 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: var(--spacing-md);
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 .nav-links a {
     color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .nav-links a:hover {
-    color: var(--color-accent);
+    color: #9f9f9f
 }
 
+@media (min-width: 768px) {
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
 
 .hero {
     display: flex;
     flex-direction: column;
-    /* Apila hijos verticalmente */
-    justify-content: center;
-    /* Centra en eje principal (vertical) */
     align-items: center;
-    /* Centra en eje transversal (horizontal) */
+    justify-content: center;
+    min-height: 70vh;
+    padding: 2rem 1rem;
     text-align: center;
-    min-height: 60vh;
-    /* Al menos 60% de la altura de la ventana */
-    padding: var(--spacing-xl) var(--spacing-lg);
-    background-color: var(--color-bg);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
 }
 
 .hero h1 {
@@ -147,18 +179,42 @@ nav {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--color-secondary);
-    font-weight: 500;
-    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero p:last-child {
-    font-size: 1.1rem;
-    color: var(--color-text-light);
-    max-width: 600px;
-    /* Limita ancho para legibilidad */
-    margin: 0;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 3rem 2rem;
+    }
+
+    .hero__title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (width:1200px) {
+    .hero__title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
 }
 
 .problema {
@@ -365,4 +421,3 @@ footer p {
     font-size: 0.9rem;
     color: var(--color-secondary);
 }
-
