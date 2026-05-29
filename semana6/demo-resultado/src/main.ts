@@ -26,6 +26,7 @@ import {
 //  Tipo del dominio
 // ─────────────────────────────────────────────────────────────
 type Producto = {
+  id: string;
   nombre: string;
   precio: number;
   stock: number;
@@ -36,6 +37,17 @@ type Producto = {
 //  Estado local (sin frameworks, sin librerías)
 // ─────────────────────────────────────────────────────────────
 const productos: Producto[] = [];
+
+function eliminarProducto (id:string): void{
+  const indice = productos.findIndex((p) => p.id === id);
+  if (indice===-1) return;
+  productos.splice (indice, 1)
+  const li = lista?.querySelector(`li [data-id="${id}"]`)?.closest("li"); 
+  if (li) li.remove(); 
+  if (productos.length===0){
+    estadoVacio?.classList.remove("oculto");
+  }
+}
 
 // ─────────────────────────────────────────────────────────────
 //  Selección tipada de elementos
@@ -52,6 +64,7 @@ const inputStock = document.querySelector<HTMLInputElement>("#stock");
 const selectCategoria = document.querySelector<HTMLSelectElement>("#categoria");
 const lista = document.querySelector<HTMLUListElement>("#lista-productos");
 const estadoVacio = document.querySelector<HTMLParagraphElement>("#estado-vacio");
+
 
 // Guarda de null: si falta cualquier elemento crítico, abortamos
 // con un error claro en consola. Mejor fallar pronto que silencioso.
@@ -129,6 +142,17 @@ function renderProducto(p: Producto): HTMLLIElement {
   li.appendChild(precio);
   li.appendChild(meta);
 
+  const botonEliminar= document.createElement("button");
+  botonEliminar.type= "button";
+  botonEliminar.className= "btm-eliminar"
+  botonEliminar.textContent= "Eliminar Producto"
+  botonEliminar.dataset.id=p.id;
+
+  botonEliminar.addEventListener("click", () => {
+    eliminarProducto(p.id);
+  });
+
+  li.appendChild(botonEliminar)
   return li;
 }
 
@@ -185,7 +209,7 @@ form.addEventListener("submit", (evento) => {
   }
 
   // Caso feliz: construimos el producto y lo agregamos.
-  const nuevo: Producto = { nombre, precio, stock, categoria };
+  const nuevo: Producto = { id: crypto.randomUUID(),nombre, precio, stock, categoria };
   productos.push(nuevo);
 
   const li = renderProducto(nuevo);
