@@ -38,12 +38,15 @@ type Producto = {
 // ─────────────────────────────────────────────────────────────
 const productos: Producto[] = [];
 
+
+
 function eliminarProducto (id:string): void{
   const indice = productos.findIndex((p) => p.id === id);
   if (indice===-1) return;
   productos.splice (indice, 1)
   const li = lista?.querySelector(`li [data-id="${id}"]`)?.closest("li"); 
   if (li) li.remove(); 
+  actualizarContador();
   if (productos.length===0){
     estadoVacio?.classList.remove("oculto");
   }
@@ -156,6 +159,31 @@ function renderProducto(p: Producto): HTMLLIElement {
   return li;
 }
 
+function contarPorCategoria(items: Producto[]): Record<Categoria, number> {
+  const conteo: Record<Categoria, number> = {
+    electronica: 0,
+    ropa: 0,
+    alimentos: 0,
+  };
+  for (const p of items) {
+    conteo[p.categoria] = conteo[p.categoria] + 1;
+  }
+  return conteo;
+}
+
+function actualizarContador(): void {
+  const conteo = contarPorCategoria(productos);
+  const items = document.querySelectorAll<HTMLSpanElement>(".contador-item");
+  items.forEach((item) => {
+    const cat = item.dataset.cat as Categoria;
+    const label = cat.charAt(0).toUpperCase() + cat.slice(1);
+    item.textContent = `${label}: ${conteo[cat]}`;
+  });
+}
+
+
+
+
 // ─────────────────────────────────────────────────────────────
 //  Helper genérico: desempaqueta un Resultado o devuelve null
 //
@@ -221,6 +249,7 @@ form.addEventListener("submit", (evento) => {
   // Limpiamos el formulario para el próximo
   form.reset();
   inputNombre.focus();
+  actualizarContador();
 });
 
 console.log("App lista. Probá agregar productos. ✋");
