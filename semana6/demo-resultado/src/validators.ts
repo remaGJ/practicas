@@ -82,3 +82,5 @@ export function formatearMoneda(valor: number): string {
     currency: "USD",
   }).format(valor);
 }
+
+
