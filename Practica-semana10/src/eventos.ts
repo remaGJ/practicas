@@ -37,8 +37,10 @@ export function escucharClientes(onSeleccionar: (id: number) => void): void {
 
 // HITO 1 · GUIADO: un solo listener para todo el catálogo.
 export function escucharCatalogo(onAgregar: (id: number) => void): void {
-  // TODO (HITO 1): addEventListener("click") en "#catalogo".
-  // Usa idDesde(e, ".btn-agregar"); si no es null, llama a onAgregar(id).
+  contenedor("#catalogo").addEventListener("click", (e) => {
+  const id= idDesde(e, ".btn-agregar");
+  if (id !== null) onAgregar(id);
+  });
 }
 
 // HITO 1 · GUIADO: mismo patrón, pero el contenedor tiene 3 acciones.
@@ -47,8 +49,15 @@ export function escucharFactura(
   onMenos: (id: number) => void,
   onQuitar: (id: number) => void
 ): void {
-  // TODO (HITO 1): un listener en "#lineas-factura" que distinga
-  // ".btn-mas", ".btn-menos" y ".btn-quitar" con idDesde(...).
+  contenedor("#lineas-factura").addEventListener("click", (e) => {
+    const idMas = idDesde(e, ".btn-mas");
+    if (idMas !== null) return onMas(idMas);
+    const idMenos = idDesde(e, ".btn-menos");
+    if (idMenos !== null) return onMenos(idMenos);
+    const idQuitar = idDesde(e, ".btn-quitar");
+    if (idQuitar !== null) return onQuitar(idQuitar);
+    }
+  );
 }
 
 // YA RESUELTO: búsqueda en vivo (input) + preventDefault en el submit.
