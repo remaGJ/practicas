@@ -100,26 +100,13 @@ async function iniciar(): Promise<void> {
   // Conectamos los eventos a mensajes en pantalla para COMPROBAR que la
   // delegación captura el botón correcto. En el Hito 2 reemplazas estas
   // funciones de prueba por la lógica real (agregar, mas, menos, quitar).
-  escucharCatalogo((id) => {
-    const p = productos.find((x) => x.id === id);
-    mostrarMensaje(
-      p ? "Agregar → " + p.nombre + " (id " + p.id + ")" : "Agregar → id " + id + " (no está en el catálogo)"
-    );
-  });
-  escucharFactura(
-    (id) => mostrarMensaje("Subir cantidad → id " + id),
-    (id) => mostrarMensaje("Bajar cantidad → id " + id),
-    (id) => mostrarMensaje("Quitar → id " + id)
-  );
+  escucharCatalogo(agregar);
+  escucharFactura(mas, menos, quitar);
   escucharClientes(seleccionarCliente);
   escucharBuscadores(
     (texto) => renderClientes(buscarClientes(clientes, texto)),
     (texto) => renderCatalogo(buscarProductos(productos, texto))
   );
-
-  // Estas funciones se conectan en el Hito 2; los datos del servidor, en el Hito 3.
-  void agregar; void mas; void menos; void quitar;
-  void cargarClientes; void cargarProductos;
 }
 
 void iniciar();
