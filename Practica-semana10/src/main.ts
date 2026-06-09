@@ -87,15 +87,23 @@ function seleccionarCliente(id: number): void {
 async function iniciar(): Promise<void> {
   // HITO 1 y 2: datos quemados.
   // HITO 3: reemplaza estas 2 líneas por cargarClientes()/cargarProductos().
-  productos = PRODUCTOS_DEMO;
   mostrarMensaje("Cargando datos…");
   const respClientes = await cargarClientes();
   if (respClientes.estado !== "listo") {
-  return mostrarMensaje(
-  respClientes.estado === "error" ? "Error: " + respClientes.mensaje : "Cargando…"
-);
-}
-  
+    return mostrarMensaje(
+      respClientes.estado === "error" ? "Error: " + respClientes.mensaje : "Cargando…"
+    );
+  }
+  clientes = respClientes.datos;
+
+  const respProductos = await cargarProductos();
+  if (respProductos.estado !== "listo") {
+    return mostrarMensaje(
+      respProductos.estado === "error" ? "Error: " + respProductos.mensaje : "Cargando…"
+    );
+  }
+  productos = respProductos.datos;
+mostrarMensaje(""); 
   // Pintado inicial
   renderClientes(clientes);
   renderCatalogo(productos);

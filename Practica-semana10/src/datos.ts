@@ -12,17 +12,28 @@ export async function cargarClientes(): Promise<EstadoCarga<Cliente[]>> {
     if (!respuesta.ok) {
       return { estado: "error", mensaje: `Error HTTP ${respuesta.status}` };
     }
-    const datos : unknown = await respuesta.json();
-    if (Array.isArray(datos)&& datos.every(esCliente) === false) {
-      return { estado: "listo", datos}; 
+    const datos: unknown = await respuesta.json();
+    if (Array.isArray(datos) && datos.every(esCliente)) {
+      return { estado: "listo", datos };
     }
-    return {estado: "error", mensaje: "Formato de datos inesperado."};
+    return { estado: "error", mensaje: "Formato de datos inesperado." };
   } catch (error) {
     return { estado: "error", mensaje: "No se pudo conectar con el servidor" };
   }
-  
 }
+
 export async function cargarProductos(): Promise<EstadoCarga<Producto[]>> {
-  // TODO (HITO 3): replicar el patrón de cargarClientes
-  return { estado: "error", mensaje: "cargarProductos() sin implementar todavía" };
+  try {
+    const respuesta = await fetch("/productos.json");
+    if (!respuesta.ok) {
+      return { estado: "error", mensaje: `Error HTTP ${respuesta.status}` };
+    }
+    const datos: unknown = await respuesta.json();
+    if (Array.isArray(datos) && datos.every(esProducto)) {
+      return { estado: "listo", datos };
+    }
+    return { estado: "error", mensaje: "Formato de datos inesperado." };
+  } catch (error) {
+    return { estado: "error", mensaje: "No se pudo conectar con el servidor" };
   }
+}
