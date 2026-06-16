@@ -1,0 +1,93 @@
+:root{
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: grey;
+    --menu-color: gray;
+    --font-family: 'Arial', sans-serif;
+    --font-size:1rem;
+    --line-heigth: 1.6;
+    --font-body: 1rem
+    
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0%;
+    font-size: 1rem;
+    color: var(--background-color)
+}
+
+
+nav {
+    display: flex;
+    background-color: var(--menu-color);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    
+}
+
+nav .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;   
+
+}
+
+nav .logo:hover{
+    color:navy;
+}   
+
+p{
+    line-height: 1.6;
+    color: #348934;
+}
+
+.subtitle{
+    color:blue;
+
+}
+
+#metricas{
+    color:blueviolet;
+    padding: 1rem;
+}
+
+#glosario{
+    color:red;
+    padding: 1rem;
+}
+
+#faq{
+    color:teal;
+    padding: 1rem;
+}
+
+nav a {
+    color: navajowhite ; 
+    text-decoration: none;
+}
+
+nav a:hover {
+    color:aqua
+}
+
+input:focus,
+textarea:focus,
+select:focus
+    {
+    outline: 2px solid teal;
+    outline-offset:20px ;
+}
+
+p {color: gray}
+.intro {color:teal}
+#about-me {color:red}
+

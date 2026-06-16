@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FoodScan</title>
+   <link rel="stylesheet" href="styles.css">
+
+   <!--Google Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+   <header>
+      <nav>
+         <a href="#" class="nav-logo">FoodScan</a>
+         <div class="nav-links">
+            <a href="#hero">Inicio</a>
+            <a href="#problema">Problema</a>
+            <a href="#solucion">Solucion</a>
+            <a href="#metricas">Metricas</a>
+            <a href="#glosario">Glosario</a>
+            <a href="#faq">FAQ</a>
+            <a href="#equipo">Equipo</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#habilidades">Habilidades</a>
+         </div>
+      </nav>
+   </header>
+
+   <main>
+
+      <section id="hero">
+         <h2>Escanea tu comida y conoce su valor nutricional</h2>
+         <p>FoodScan permite a los estudiantes <strong>escanear alimentos</strong> del comedor y conocer su
+            <em>contenido nutricional al instante </em>
+         </p>
+         <p>enlace de llamada apuntando a <a href="#faq">FAQ</a> y otra apuntando a <a href="#equipo">Equipo</a></p>
+
+         <picture>
+            <source srcset="https://picsum.photos/1600/600" media="(min-width: 768px)">
+            <source srcset="https://picsum.photos/800/400" media="(max-width: 767px)">
+            <img src="https://picsum.photos/800/400" alt="Imagen adaptada para móvil y escritorio">
+         </picture>
+      </section>
+
+      <section id="problema" class="problema">
+         <h2>Problema</h2>
+         <p>Los estudiantes consumen alimentos sin conocer su valor nutricional</p>
+         <p>Existe falta de información sobre <mark>calorías y nutrientes</mark> en los comedores universitarios</p>
+
+
+         <blockquote>
+            "Muchas veces comemos sin saber si es saludable o no"
+            <cite>Estudiante universitario</cite>
+
+         </blockquote>
+
+         <ul>
+            <li>Desconocimiento del valor nutricional</li>
+            <li>Elecciones alimenticias incorrectas</li>
+            <li>Falta de opciones saludables</li>
+         </ul>
+
+      </section>
+
+      <section id="solucion" class="solucion-container">
+         <h2>Solucion</h2>
+         <div class="grid-galeria">
+            <article class="card">
+               <i class="fa-solid fa-bowl-food"></i>
+               <h3>Escaneo de alimentos</h3>
+               <p> FoodScan permite a los estudiantes escanear alimentos del comedor y conocer su contenido nutricional
+                  al
+                  instante </p>
+            </article>
+
+
+            <article class="card">
+               <i class="fa-solid fa-apple-whole"></i>
+               <h3>Información nutricional</h3>
+               <p>Muestra calarías, proteínas, carbohidratos y grasas</p>
+            </article>
+
+            <article class="card">
+               <i class="fa-solid fa-lightbulb"></i>
+               <h3>Recomendaciones</h3>
+               <p>Sugiere opciones más saludables según el contenido nutricional</p>
+            </article>
+         </div>
+
+         <figure>
+            <video controls muted width="100">
+               <source src="https://www.youtube.com/watch?v=i9WV6oRGgoA&t=1s">
+            </video>
+         </figure>
+
+      </section>
+
+      <section id="metricas" class="metricas">
+         <h2>Métricas</h2>
+
+         <dl>
+            <dt> Usuarios</dt>
+            <dd><data value="800">800 usuarios</data></dd>
+
+            <dt>Escaneos diarios</dt>
+            <dd><data value="190"> 190 escaneos </data></dd>
+
+            <dt> Precios de FoodScan</dt>
+            <dd><data value="90">90 %</data></dd>
+
+         </dl>
+
+         <p> Satisfacción del usuario </p>
+         <meter min="0" max="100" value="85">85%</meter>
+
+         <p> Progreso del emprendimiento</p>
+         <progress value="60" max="100">60%</progress>
+
+      </section>
+
+      <section id="glosario">
+         <h2>Glosario</h2>
+
+         <dl>
+            <dt>Escaneo nutricional</dt>
+            <dd>Es la acción de escanear un alimento para obtener información sobre su contenido nutricional.</dd>
+
+            <dt>Calorías</dt>
+            <dd>Es la medida de energía que aporta un alimento al organismo.</dd>
+
+         </dl>
+
+      </section>
+
+      <section id="faq">
+         <h2>Preguntas frecuentes</h2>
+
+         <details>
+            <summary>¿ Como funciona FoodScan?</summary>
+            <p>FoodScan permite escanear alimentos del comedor y conocer su contenido nutricional al instante.</p>
+         </details>
+
+         <details>
+            <summary>¿Necesita internet?</summary>
+            <p> Sí, FoodScan requiere conexión a internet para acceder a su base de datos nutricional.</p>
+         </details>
+
+         <details>
+            <summary>¿Es gratuito?</summary>
+            <p> Sí, para estudiantes de la universidad.</p>
+         </details>
+
+      </section>
+
+      <section id="equipo">
+         <h2>Nuestro Equipo</h2>
+         <div class="grid-equipo">
+            <article class="card-equipo">
+               <img src="jose.png" alt="Foto de Jose">
+               <h3>Jose</h3>
+               <p>Desarrollador Backend</p>
+            </article>
+
+            <article class="card-equipo">
+               <img src="ros.png" alt="Foto de Rosanna">
+               <h3>Rosanna</h3>
+               <p>Diseñadora UI/UX</p>
+            </article>
+
+            <article class="card-equipo">
+               <img src="jan.png" alt="Foto de Jandry">
+               <h3>Jandry</h3>
+               <p>Especialista en QA</p>
+            </article>
+         </div>
+      </section>
+
+      <section id="contacto">
+         <form action="#" method="post" aria-label="Formulario de contacto">
+            <fieldset>
+               <legend>Información personal</legend>
+               <p>
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="60"
+                     placeholder="EJ: Juan Perez">
+               </p>
+               <p>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required minlength="5" maxlength="100"
+                     placeholder="EJ: example@email.com">
+               </p>
+               <p>
+                  <label for="telefono">Telefono:</label>
+                  <input type="tel" id="telefono" name="telefono" required minlength="9" maxlength="9"
+                     placeholder="EJ: 099986542">
+               </p>
+            </fieldset>
+            <fieldset>
+               <legend>Mensaje</legend>
+               <p>
+                  <label for="asunto"> Asunto: </label>
+                  <select id="asunto" name="asunto" required>
+                     <option value="">Seleccione una opción</option>
+                     <option value="">Sugerencia</option>
+                     <option value="">Queja</option>
+                     <option value="">Oferta de trabajo</option>
+                     <option value="">Otro</option>
+                  </select>
+               </p>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+            <p>
+               <input class="boton" type="checkbox" id="acepto" name="acepto" required>
+               <label class="acepto" for="acepto">Acepto los terminos y condiciones</label>
+            </p>
+         </form>
+      </section>
+
+      <section id="habilidades">
+         <table>
+            <caption>Habilidades técnicas del equipo - Actualizado abril 2026</caption>
+            <thead>
+               <tr>
+                  <th scope="col">Categoría</th>
+                  <th scope="col">Tecnología</th>
+                  <th scope="col">Nivel</th>
+                  <th scope="col">Años</th>
+               </tr>
+            </thead>
+
+            <tbody>
+
+               <tr>
+                  <th scope="row" rowspan="3">Lenguaje</th>
+                  <td>Html5</td>
+                  <td>Intermedio</td>
+                  <td>1</td>
+               </tr>
+               <tr>
+                  <td>JavaScript</td>
+                  <td>Basico</td>
+                  <td>1</td>
+               </tr>
+               <tr>
+                  <td>Python</td>
+                  <td>Intermedio</td>
+                  <td>2</td>
+               </tr>
+
+
+
+            </tbody>
+
+            <tfoot>
+               <tr>
+                  <td colspan="4">Nota: Las habilidades del equipo se actualizan regularmente para reflejar el
+                     crecimiento y desarrollo continuo.</td>
+               </tr>
+         </table>
+
+      </section>
+
+   </main>
+
+   <footer class="footer">
+      <address>
+         Contacto: foodscan@email.com
+      </address>
+
+      <time datetime="2026">2026</time>
+      <small>© 2026 FoodScan</small>
+      <div class="redes">
+         <a href="https://github.com/usuario" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+         </a>
+         <a href="https://linkedin.com/in/usuario" target="_blank" rel="noopener" arialabel="
+        LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+         </a>
+         <a href="mailto:correo@uleam.edu.ec" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+         </a>
+      </div>
+      <p>&copy; 2026 · Jandry - José - Rosanna · Hecho con HTML, CSS y mucho café</p>
+   </footer>
+
+</body>
+
+</html>
