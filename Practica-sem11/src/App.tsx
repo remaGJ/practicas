@@ -10,15 +10,10 @@ export default function App() {
 
   useEffect(() => {
     async function cargarProductos() {
-      try {
-        const respuesta = await fetch("/productos.json");
-        const data: Producto[] = await respuesta.json();
-        setProductos(data);
-      } catch (error) {
-        console.error("Error cargando productos:", error);
-      } finally {
-        setCargando(false);
-      }
+      const respuesta = await fetch("/productos.json");
+      const data: Producto[] = await respuesta.json();
+      setProductos(data);
+      setCargando(false);
     }
 
     cargarProductos();
@@ -37,7 +32,6 @@ export default function App() {
   return (
     <main>
       <h1>🧾 Mini Facturador — React</h1>
-      <p>Punto de partida. Reutiliza src/lib/types.ts y src/lib/calculos.ts.</p>
       <p>Productos cargados: {productos.length}</p>
 
       {cargando ? (
@@ -60,26 +54,20 @@ export default function App() {
 
       <section>
         <h2>Carrito</h2>
-        {lineas.length === 0 ? (
-          <p>No hay productos en el carrito.</p>
-        ) : (
-          <ul>
-            {lineas.map((linea) => (
-              <li key={linea.producto.id}>
-                {linea.producto.nombre} x {linea.cantidad} = ${(
-                  linea.producto.precio * linea.cantidad
-                ).toFixed(2)}
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul>
+          {lineas.map((linea) => (
+            <li key={linea.producto.id}>
+              {linea.producto.nombre} x {linea.cantidad} = ${(
+                linea.producto.precio * linea.cantidad
+              ).toFixed(2)}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section>
-        <h2>Totales</h2>
-        <p>Subtotal: ${totales.subtotal.toFixed(2)}</p>
-        <p>IVA: ${totales.iva.toFixed(2)}</p>
-        <p>Total: ${totales.total.toFixed(2)}</p>
+        <h2>Total</h2>
+        <p>${totales.total.toFixed(2)}</p>
       </section>
     </main>
   );
