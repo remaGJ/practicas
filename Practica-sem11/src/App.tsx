@@ -10,10 +10,13 @@ export default function App() {
 
   useEffect(() => {
     async function cargarProductos() {
-      const respuesta = await fetch("/productos.json");
-      const data: Producto[] = await respuesta.json();
-      setProductos(data);
-      setCargando(false);
+      try {
+        const respuesta = await fetch("/productos.json");
+        const data: Producto[] = await respuesta.json();
+        setProductos(data);
+      } finally {
+        setCargando(false);
+      }
     }
 
     cargarProductos();
@@ -57,9 +60,7 @@ export default function App() {
         <ul>
           {lineas.map((linea) => (
             <li key={linea.producto.id}>
-              {linea.producto.nombre} x {linea.cantidad} = ${(
-                linea.producto.precio * linea.cantidad
-              ).toFixed(2)}
+              {linea.producto.nombre} x {linea.cantidad}
             </li>
           ))}
         </ul>
