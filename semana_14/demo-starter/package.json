@@ -1,0 +1,20 @@
+{
+  "name": "demo-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^7.0.1",
+    "@sveltejs/kit": "^2.69.1",
+    "svelte": "^5.56.4",
+    "vite": "^8.1.3"
+  }
+}
